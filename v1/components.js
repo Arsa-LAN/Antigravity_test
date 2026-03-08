@@ -7,9 +7,9 @@ headerTemplate.innerHTML = `
       width: 100%;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 25, 47, 0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
       transition: all 0.3s ease;
     }
     header {
@@ -77,14 +77,15 @@ headerTemplate.innerHTML = `
     }
     
     .disclaimer-banner {
-      background: #ff4757;
-      color: white;
+      background: #030712;
+      color: #ef4444;
       text-align: center;
-      padding: 0.4rem;
+      padding: 0.5rem;
       font-size: 0.75rem;
-      font-weight: bold;
-      letter-spacing: 0.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
     }
     @media (max-width: 768px) {
       nav { display: none; } /* Simplified for demo */
@@ -105,11 +106,11 @@ headerTemplate.innerHTML = `
 `;
 
 class SiteHeader extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(headerTemplate.content.cloneNode(true));
-  }
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(headerTemplate.content.cloneNode(true));
+    }
 }
 customElements.define('site-header', SiteHeader);
 
@@ -118,7 +119,7 @@ footerTemplate.innerHTML = `
   <style>
     :host {
       display: block;
-      background: #0a192f;
+      background: #030712;
       color: #8892b0;
       padding: 4rem 5% 2rem;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -205,10 +206,10 @@ footerTemplate.innerHTML = `
 `;
 
 class SiteFooter extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
-  }
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+    }
 }
 customElements.define('site-footer', SiteFooter);
